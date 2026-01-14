@@ -1,0 +1,188 @@
+/* --- RESET & VARIABLES --- */
+:root {
+    --primary: #111;
+    --accent: #fa5400;
+    --bg-light: #f5f5f5;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    line-height: 1.6;
+    color: var(--primary);
+    /* Safe Areas για iPhone */
+    padding-top: env(safe-area-inset-top);
+    padding-bottom: env(safe-area-inset-bottom);
+    /* Ρευστή τυπογραφία */
+    font-size: clamp(16px, 2.5vw, 18px); 
+}
+
+/* --- HEADER & NAVIGATION --- */
+.main-header {
+    background: #fff;
+    padding: 1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: sticky; /* Fixed Header */
+    top: 0;
+    z-index: 1000;
+    border-bottom: 1px solid #eee;
+}
+
+.menu-btn {
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+}
+
+/* Mobile Menu (Hidden by default) */
+.nav-links {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    background: #fff;
+    border-bottom: 1px solid #ddd;
+}
+
+.nav-links.active { display: flex; }
+
+.nav-links a {
+    padding: 1rem;
+    text-decoration: none;
+    color: var(--primary);
+    border-top: 1px solid #eee;
+    text-align: center;
+}
+
+/* --- HERO SECTION --- */
+.hero {
+    /* Βεβαιώσου ότι έχεις το hero.jpg στο φάκελο images */
+    background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('images/hero.jpg');
+    background-size: cover;
+    background-position: center;
+    text-align: center;
+    /* Ύψος ορίστηκε στο HTML για critical rendering */
+}
+
+.hero h1 {
+    font-size: clamp(2.5rem, 8vw, 5rem);
+    font-weight: 900;
+    margin-bottom: 0.5rem;
+}
+
+.cta-button {
+    display: inline-block;
+    background: #fff;
+    color: #000;
+    padding: 10px 25px;
+    border-radius: 20px;
+    text-decoration: none;
+    font-weight: bold;
+    margin-top: 20px;
+    transition: transform 0.2s;
+}
+
+.cta-button:hover { transform: scale(1.05); }
+
+/* --- PRODUCT GRID & CONTAINER QUERIES --- */
+.products-section { padding: 40px 20px; }
+
+/* 1. Ορίζουμε τον Container */
+.product-grid {
+    display: grid;
+    gap: 20px;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    
+    /* Ενεργοποίηση Container Query */
+    container-type: inline-size;
+    container-name: grid-container;
+}
+
+.product-card {
+    border: 1px solid #eee;
+    border-radius: 8px;
+    padding: 15px;
+    text-align: center;
+    background: #fff;
+}
+
+/* Εικόνες με σταθερή αναλογία (Aspect Ratio - Απαίτηση) */
+.product-card img {
+    width: 100%;
+    aspect-ratio: 4/3; 
+    object-fit: cover;
+    border-radius: 4px;
+    margin-bottom: 10px;
+}
+
+.add-btn {
+    background: var(--primary);
+    color: white;
+    border: none;
+    padding: 10px;
+    width: 100%;
+    border-radius: 20px;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+/* 2. Κανόνας @container (Αλλάζει το στυλ αν υπάρχει χώρος) */
+@container grid-container (min-width: 500px) {
+    .product-card {
+        box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+        border: 1px solid #ddd;
+    }
+}
+
+/* --- MAP & FOOTER --- */
+.location-section {
+    text-align: center;
+    padding: 40px 20px;
+    background: var(--bg-light);
+}
+
+.map-container {
+    max-width: 800px;
+    margin: 20px auto;
+}
+
+.newsletter {
+    background: #111;
+    color: white;
+    padding: 50px 20px;
+    text-align: center;
+}
+
+.newsletter input {
+    padding: 10px;
+    margin-top: 10px;
+}
+
+footer {
+    text-align: center;
+    padding: 20px;
+    font-size: 0.9rem;
+    color: #666;
+}
+
+/* --- DESKTOP MEDIA QUERY --- */
+@media (min-width: 800px) {
+    .menu-btn { display: none; }
+    
+    .nav-links {
+        display: flex;
+        flex-direction: row;
+        position: static;
+        width: auto;
+        border: none;
+        background: transparent;
+    }
+    
+    .nav-links a { border: none; padding: 0 15px; }
+}

@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="el">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nike Store - Just Do It</title>
+    
+    <style>
+        body { margin: 0; font-family: 'Helvetica Neue', Arial, sans-serif; }
+        .hero { height: 80vh; background: #111; color: white; display: flex; align-items: center; justify-content: center; }
+    </style>
+    
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!DOCTYPE html>
+<html lang="el">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nike Concept Store</title>
+    
+    <style>
+        body { margin: 0; font-family: 'Helvetica Neue', Arial, sans-serif; }
+        .hero { 
+            height: 80vh; 
+            background-color: #111; 
+            color: white; 
+            display: flex; 
+            align-items: center; 
+            justify-content: center; 
+        }
+    </style>
+    
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header class="main-header">
+        <div class="logo">
+            <svg viewBox="0 0 24 24" width="60" height="24" fill="currentColor"><path d="M21 8.719L7.836 14.303C6.74 14.768 5.818 15 5.075 15c-.836 0-1.445-.295-1.819-.884-.485-.76-.273-1.982.559-3.272.494-.754 1.122-1.446 1.734-2.108-.144.234-1.415 2.349-.025 3.345.275.2.666.298 1.147.298.386 0 .829-.063 1.316-.19L21 8.719z"/></svg>
+        </div>
+        
+        <button id="menu-btn" class="menu-btn" aria-label="Menu">☰</button>
+        
+        <nav id="main-nav" class="nav-links">
+            <a href="#new">Νέες Αφίξεις</a>
+            <a href="#shop">Ανδρικά</a>
+            <a href="#shop">Γυναικεία</a>
+            <a href="#contact">Επικοινωνία</a>
+        </nav>
+    </header>
+
+    <main>
+        <section class="hero">
+            <div class="hero-content">
+                <h1>JUST DO IT.</h1>
+                <p>Η νέα γενιά αθλητικών είναι εδώ.</p>
+                <a href="#shop" class="cta-button">Αγορά Τώρα</a>
+            </div>
+        </section>
+
+        <section id="shop" class="products-section">
+            <h2>Trending Now</h2>
+            <div class="product-grid">
+                
+                <article class="product-card">
+                    <img src="images/shoe1.jpg" 
+                         srcset="images/shoe1.jpg 400w, images/shoe1.jpg 800w"
+                         sizes="(max-width: 600px) 100vw, 50vw"
+                         alt="Nike Air Max" 
+                         loading="lazy">
+                    <div class="info">
+                        <h3>Nike Air Max Pulse</h3>
+                        <p class="category">Ανδρικά Παπούτσια</p>
+                        <p class="price">159.99€</p>
+                        <button class="add-btn">Προσθήκη</button>
+                    </div>
+                </article>
+
+                <article class="product-card">
+                    <img src="images/shoe2.jpg" alt="Nike Dunk Low" loading="lazy">
+                    <div class="info">
+                        <h3>Nike Dunk Low</h3>
+                        <p class="category">Γυναικεία Παπούτσια</p>
+                        <p class="price">119.99€</p>
+                        <button class="add-btn">Προσθήκη</button>
+                    </div>
+                </article>
+
+                <article class="product-card">
+                    <img src="images/shoe3.jpg" alt="Nike Metcon" loading="lazy">
+                    <div class="info">
+                        <h3>Nike Metcon 9</h3>
+                        <p class="category">Προπόνηση</p>
+                        <p class="price">139.99€</p>
+                        <button class="add-btn">Προσθήκη</button>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <section id="location" class="location-section">
+            <h2>Βρείτε μας</h2>
+            <p>Επισκεφθείτε το κατάστημά μας στο Σύνταγμα.</p>
+            <div class="map-container">
+                <iframe 
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3144.859105769741!2d23.733478875560733!3d37.9745778003184!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14a1bd3a2a6b47c5%3A0x6b8d96b02662c12!2sSyntagma%20Square!5e0!3m2!1sen!2sgr!4v1700000000000!5m2!1sen!2sgr" 
+                    width="100%" height="300" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+            </div>
+        </section>
+
+        <section id="contact" class="newsletter">
+            <h2>Γίνε μέλος</h2>
+            <form id="nikeForm">
+                <input type="email" id="email" placeholder="Email" required>
+                <button type="submit">ΕΓΓΡΑΦΗ</button>
+            </form>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 Nike Concept Project. Φοιτητική Εργασία.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
